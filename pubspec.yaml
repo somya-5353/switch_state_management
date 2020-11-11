@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   provider:
+  responsive_builder: ^0.3.0
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:switch_state_management/screens/handle_switch_state.dart';
+import 'package:switch_state_management/views/responsive_payment_pending_card.dart';
 
 class SwitchDemoScreen extends StatelessWidget {
   @override
@@ -8,14 +9,20 @@ class SwitchDemoScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Switch State Demo'),
       ),
-      body: Center(
-          child: FlatButton(
-            child: Text('Press Here'),
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.pushNamed(context, ProviderSwitchScreen.routeName);
-            },
-          )
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ResponsivePaymentPendingCard(),
+          Center(
+              child: FlatButton(
+                child: Text('Press Here'),
+                color: Colors.blue,
+                onPressed: () {
+                  Navigator.pushNamed(context, ProviderSwitchScreen.routeName);
+                },
+              ),
+          ),
+        ],
       ),
     );
   }

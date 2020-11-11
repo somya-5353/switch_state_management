@@ -12,13 +12,29 @@ class ProviderSwitchScreen extends StatelessWidget {
     final switches = switchData.switchList;
 
     return Scaffold(
-        body: ListView.builder(
-      padding: EdgeInsets.all(10),
-      itemCount: switches.length,
-      itemBuilder: (cix, index) => ChangeNotifierProvider.value(
-        value: switches[index],
-        child: CustomSwitchTile(title: switches[index].title, value: switches[index].state, switchId: switches[index].id),
-      ),
+        body: Column(
+      children: [
+        Flexible(
+          child: ListView.builder(
+            padding: EdgeInsets.all(10),
+            itemCount: switches.length,
+            itemBuilder: (cix, index) => ChangeNotifierProvider.value(
+              value: switches[index],
+              child: CustomSwitchTile(
+                  title: switches[index].title,
+                  value: switches[index].state,
+                  switchId: switches[index].id),
+            ),
+          ),
+        ),
+        FlatButton(
+          child: Text('BACK'),
+          color: Colors.blue,
+          onPressed: () {
+            Navigator.pushNamed(context, '/');
+          },
+        )
+      ],
     ));
   }
 }
